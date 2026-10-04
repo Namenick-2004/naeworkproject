@@ -1,0 +1,8 @@
+{
+  "name": "Remix NetMonitor - Enterprise Network \u0026 Wireless AP Monitoring System",
+  "description": "Enterprise Web-Based Network Device and Wireless Access Point Monitoring and Management System (Cisco DNA Center \u0026 PRTG style) with telemetry, interactive topology, port matrix, alarms, and RBAC.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
