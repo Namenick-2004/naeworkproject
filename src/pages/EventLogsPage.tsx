@@ -5,7 +5,7 @@ import { FileText, Search, Download, Filter, Terminal } from 'lucide-react';
 import { SyslogEntry } from '../types';
 
 export const EventLogsPage: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const { syslogs } = useNetworkData();
 
   const [search, setSearch] = useState('');
@@ -107,12 +107,12 @@ export const EventLogsPage: React.FC = () => {
               onChange={e => setSeverityFilter(e.target.value)}
               className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-800 dark:text-slate-200 focus:outline-none"
             >
-              <option value="all">ทุกระดับความรุนแรง</option>
-              <option value="critical">วิกฤต</option>
-              <option value="error">ข้อผิดพลาด</option>
-              <option value="warning">คำเตือน</option>
-              <option value="notice">ประกาศ</option>
-              <option value="info">ข้อมูล</option>
+              <option value="all">{lang === 'th' ? 'ทุกระดับความรุนแรง' : 'All severities'}</option>
+              <option value="critical">{lang === 'th' ? 'วิกฤต' : 'Critical'}</option>
+              <option value="error">{lang === 'th' ? 'ข้อผิดพลาด' : 'Error'}</option>
+              <option value="warning">{lang === 'th' ? 'คำเตือน' : 'Warning'}</option>
+              <option value="notice">{lang === 'th' ? 'ประกาศ' : 'Notice'}</option>
+              <option value="info">{lang === 'th' ? 'ข้อมูล' : 'Info'}</option>
             </select>
           </div>
 
@@ -124,7 +124,7 @@ export const EventLogsPage: React.FC = () => {
               onChange={e => setFacilityFilter(e.target.value)}
               className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-800 dark:text-slate-200 focus:outline-none font-mono"
             >
-              <option value="all">ทุกหมวดระบบ</option>
+              <option value="all">{lang === 'th' ? 'ทุกหมวดระบบ' : 'All facilities'}</option>
               <option value="LOCAL7">LOCAL7</option>
               <option value="AUTH">AUTH</option>
               <option value="SYSTEM">SYSTEM</option>
@@ -144,7 +144,7 @@ export const EventLogsPage: React.FC = () => {
                 <th className="py-2.5 px-3 w-24">{t('severity')}</th>
                 <th className="py-2.5 px-3 w-24">{t('facility')}</th>
                 <th className="py-2.5 px-4 w-48">{t('hostIp')}</th>
-                <th className="py-2.5 px-4 w-40">แท็กช่วยจำ</th>
+                <th className="py-2.5 px-4 w-40">{lang === 'th' ? 'แท็กช่วยจำ' : 'Mnemonic tag'}</th>
                 <th className="py-2.5 px-4">{t('logMessage')}</th>
               </tr>
             </thead>
